@@ -48,8 +48,12 @@ jobs:
 
       - name: Build CAVA
         run: |
-          ls
-          pwd
           cd cava/cavandroid
-          ./gradlew assembleDebug \
+          ./gradlew assembleRelease \
             -Pcmake.fftw3.dir="$GITHUB_WORKSPACE/fftw3-android"
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: CAVA-APK
+          path: cava/cavandroid/app/build/outputs/apk/release/app-release.apk
