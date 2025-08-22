@@ -48,6 +48,7 @@ jobs:
 
       - name: Build CAVA
         run: |
-          cd cavandroid
+          ls
+          pwd
           ./gradlew assembleDebug \
             -Pcmake.fftw3.dir="$GITHUB_WORKSPACE/fftw3-android"
