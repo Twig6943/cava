@@ -50,5 +50,6 @@ jobs:
         run: |
           ls
           pwd
+          cd cava/cavandroid
           ./gradlew assembleDebug \
             -Pcmake.fftw3.dir="$GITHUB_WORKSPACE/fftw3-android"
